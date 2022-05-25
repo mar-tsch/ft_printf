@@ -6,7 +6,7 @@
 /*   By: mtritsch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:48:38 by mtritsch          #+#    #+#             */
-/*   Updated: 2022/05/20 16:34:54 by mtritsch         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:19:51 by mtritsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,24 @@
 
 int	ft_printf(const char *format, ...)
 {
-    //create a struct for flags in h file
-    
-    //init the struct
+    //va_list arg;
 
-    //declare and malloc(sizeof struct type) a temp tab
+    //declare and malloc(sizeof ?) a temp tab
 
-    //va_start ?
+    //va_start(arg, format) ?
 
     //declare return tab 
 
     //x = -1
 
-    //loop on the string (format[++x])
+    //while (format[++x])
     
-        //if format[x] == '%' => check format at x + 1
+        //if format[x] == '%' => check_arg at x + 1 (cspdiupxX%)
         //else write &format[x] => return tab
         
     //end loop
 
-    //va_end ?
+    //va_end(arg) ?
 
     //temp tab lenght => return tab
 

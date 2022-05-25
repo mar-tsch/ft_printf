@@ -6,7 +6,7 @@
 /*   By: mtritsch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:08:40 by mtritsch          #+#    #+#             */
-/*   Updated: 2022/05/20 16:38:34 by mtritsch         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:13:40 by mtritsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include "libft.h"
 
 //struct flags /va_list args
+
+typedef struct s_flags {
+    //flags
+}   t_flags;
 
 int     ft_printf(const char *, ...);
 #endif
