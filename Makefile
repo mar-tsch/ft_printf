@@ -5,36 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mtritsch <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/19 13:45:51 by mtritsch          #+#    #+#              #
-#    Updated: 2022/05/19 14:53:16 by mtritsch         ###   ########.fr        #
+#    Created: 2022/06/07 15:13:55 by mtritsch          #+#    #+#              #
+#    Updated: 2022/06/10 17:11:04 by mtritsch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =
+SRCS	=	ft_printf.c utils.c u_int.c ptr.c hexa.c
+OBJS	=	${SRCS:.c=.o}
+NAME	=	libftprintf.a
+LIBFT	=	libft
+CC	=	gcc
+CFLAGS	=	-Wall -Wextra -Werror
+RM	=	rm -f
+AR	=	ar rc
 
-OBJS = ${SRCS:.c=.o}
-
-NAME = libftprintf.a
-
-CC :
-	gcc
-
-CFLAGS :
-	-Wall -Wextra -Werror
+${NAME} : ${OBJS}
+	  @make -C ${LIBFT}
+	  @cp ${LIBFT}/libft.a .
+	  @mv libft.a ${NAME}
+	  ${AR} ${NAME} ${OBJS}
 
 .c.o :
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME} : ${OBJS}
-	ar rc ${NAME} ${OBJS}
-
-all :
-	${NAME}
+all :	${NAME}
 
 clean :
-	rm -f ${OBJS}
+	${RM} ${OBJS}
+	@make clean -C ${LIBFT}
 
-fclean :
-	rm -f ${NAME}
+fclean : clean
+	${RM} ${NAME}
+	${RM} ${LIBFT}/libft.a
 
 re : fclean all
